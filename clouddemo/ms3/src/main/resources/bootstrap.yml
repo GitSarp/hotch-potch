@@ -1,0 +1,15 @@
+# 启动时查找的注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka/
+
+# Config配置中心
+spring:
+  cloud:
+    config:
+      label: master
+      profile: formal
+      discovery:
+        enabled: true
+        serviceId: demo-config-server
