@@ -9,7 +9,7 @@ spring:
       label: master
       server:
         git:
-          uri: https://github.com/EwingTsai/spring-cloud-demo/
+          uri: https://github.com/GitSarp/hotch-potch/tree/master/clouddemo
           searchPaths: demo-config-server/config-center/{application}
           timeout: 10
 
