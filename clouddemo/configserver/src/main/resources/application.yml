@@ -1,0 +1,24 @@
+# 应用端口与名称配置
+server:
+  port: 8100
+spring:
+  application:
+    name: demo-config-server
+  cloud:
+    config: # Config配置中心
+      label: master
+      server:
+        git:
+          uri: https://github.com/EwingTsai/spring-cloud-demo/
+          searchPaths: demo-config-server/config-center/{application}
+          timeout: 10
+
+# Eureka客户端配置
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+  instance:
+    preferIpAddress: true
+    instanceId: ${spring.cloud.client.ipAddress}:${server.port}
+
