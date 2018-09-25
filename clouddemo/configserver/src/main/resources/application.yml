@@ -10,8 +10,8 @@ spring:
       server:
         git:
           uri: https://github.com/GitSarp/hotch-potch
-          searchPaths: tree/master/clouddemo/demo-config-server/config-center/{application}
           timeout: 10
+          search-paths: clouddemo/configserver/config-center/{application}
 
 # Eureka客户端配置
 eureka:
