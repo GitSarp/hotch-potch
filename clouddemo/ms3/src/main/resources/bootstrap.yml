@@ -12,4 +12,6 @@ spring:
       profile: formal
       discovery:
         enabled: true
+#通过服务名可以实现集群，而url只能定位到主机
         serviceId: demo-config-server
+#      uri: http://localhost:8100

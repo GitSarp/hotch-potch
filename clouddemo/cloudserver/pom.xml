@@ -35,7 +35,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!--spring-cloud-->
+        <!--spring-cloud, eureka-server-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>

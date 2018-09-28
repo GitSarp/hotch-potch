@@ -5,7 +5,7 @@ spring:
   application:
     name: demo-config-server
   cloud:
-    config: # Config配置中心
+    config: # Config配置中心,git server
       label: master
       server:
         git:
@@ -17,7 +17,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:1001/eureka/
+      defaultZone: http://localhost:1001/eureka/,http://localhost:1002/eureka/
   instance:
     preferIpAddress: true
     instanceId: ${spring.cloud.client.ipAddress}:${server.port}

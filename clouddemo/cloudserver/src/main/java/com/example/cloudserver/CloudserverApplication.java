@@ -10,7 +10,5 @@ public class CloudserverApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(CloudserverApplication.class, args);
-        //        new SpringApplicationBuilder(ClouddemoApplication.class)
-//                .web(true).run(args);
     }
 }

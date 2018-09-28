@@ -1,0 +1,23 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka/,http://localhost:1002/eureka/
+
+server:
+  port: 6001
+spring:
+  application:
+    name: service-zuul
+
+# zuul路由转发，路由配置
+zuul:
+  routes:
+    api-a:
+      path: /client/**
+      serviceId: eureka-client
+    api-b:
+      path: /ms3/**
+      serviceId: ms3
+    api-c:
+      path: /ribbon/**
+      serviceId: ribboncall
