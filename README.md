@@ -1,7 +1,7 @@
 # hotch-potch
 contains java practices
 
-1.clouddemo         spring cloud practice
+1.clouddemo:         spring cloud practice
 
 - cloudserver为高可用的eureka-server可开两个实例，可以自行修改，以参数启动。
 
@@ -15,8 +15,8 @@ contains java practices
 
 - zipkin链路追踪有问题。
 
-2.dubbostart        dubbo practice
+2.dubbostart:        dubbo practice
 
-3.kafkademo  kafka practice
+3.kafkademo:  kafka practice
 
-4.springtaskdmeo    spring task的springMVC两种实现，spring boot 2.0的quartz和spring task使用
+4.springtaskdmeo:    spring task的springMVC两种实现，spring boot 2.0的quartz和spring task使用
