@@ -20,3 +20,5 @@ contains java practices
 3.kafkademo:  kafka practice
 
 4.springtaskdmeo:    spring task的springMVC两种实现，spring boot 2.0的quartz和spring task使用
+
+5.nettydemo 实现netty空闲心跳（根据 https://crossoverjie.top/JCSprout/#/netty/Netty(1)TCP-Heartbeat 文章练习）
