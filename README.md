@@ -17,4 +17,6 @@ contains java practices
 
 2.dubbostart        dubbo practice
 
-3.springtaskdmeo    quartz&spring task practice
+3.kafkademo  kafka practice
+
+4.springtaskdmeo    spring task的springMVC两种实现，spring boot 2.0的quartz和spring task使用
