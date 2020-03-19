@@ -1,16 +1,17 @@
 package com.example.gatewaydemo;
 
-import com.netflix.zuul.ZuulFilter;
-import com.netflix.zuul.context.RequestContext;
-import com.netflix.zuul.exception.ZuulException;
+//import com.netflix.zuul.ZuulFilter;
+//import com.netflix.zuul.context.RequestContext;
+//import com.netflix.zuul.exception.ZuulException;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.http.HttpServletRequest;
+//import javax.servlet.http.HttpServletRequest;
 
 //过滤器，当本网关服务开启时，并且使用了路由表的配置访问服务会过滤相关请求
-@Component
-public class MyFilter extends ZuulFilter {
-    @Override
+//@Component
+//extends ZuulFilter
+public class MyFilter  {
+  /*  @Override
     public String filterType() {
         return "pre";
     }
@@ -42,6 +43,6 @@ public class MyFilter extends ZuulFilter {
         }
         return null;
     }
-
+*/
 
 }

@@ -8,16 +8,35 @@ server:
 spring:
   application:
     name: service-zuul
+  cloud:
+    gateway:
+      routes:
+        - id: bulletscreen
+          # 重点！/info必须使用http进行转发，lb代表从注册中心获取服务
+          uri: lb://bullet
+          predicates:
+            # 重点！转发该路径！
+            - Path=/bullet/info/**
+        - id: bulletscreen
+          # 重点！lb:ws://代表从注册中心获取服务，并且转发协议为websocket
+          uri: lb:ws://bullet
+          predicates:
+            # 转发/bullet端点下的所有路径
+            - Path=/bullet/**
 
+        - id: bulletscreen2
+          uri: lb:ws://bullet
+          predicates:
+            - Path=/bullet2/**
 # zuul路由转发，路由配置
-zuul:
-  routes:
-    api-a:
-      path: /client/**
-      serviceId: eureka-client
-    api-b:
-      path: /ms3/**
-      serviceId: ms3
-    api-c:
-      path: /ribbon/**
-      serviceId: ribboncall
+#zuul:
+#  routes:
+#    api-a:
+#      path: /client/**
+#      serviceId: eureka-client
+#    api-b:
+#      path: /ms3/**
+#      serviceId: ms3
+#    api-c:
+#      path: /ribbon/**
+#      serviceId: ribboncall
