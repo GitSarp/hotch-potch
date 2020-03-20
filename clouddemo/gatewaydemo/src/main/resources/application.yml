@@ -2,6 +2,10 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:1001/eureka/,http://localhost:1002/eureka/
+  instance:
+    #服务注册的实例id
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    prefer-ip-address: true
 
 server:
   port: 6001
@@ -28,6 +32,17 @@ spring:
           uri: lb:ws://bullet
           predicates:
             - Path=/bullet2/**
+
+        - id: wsservice
+          #ws://localhost:3000/sharedb?nodeid=ssq
+          uri: lb:ws://ws-service
+          predicates:
+            - Path=/sharedb/**
+        - id: wsservice2
+          #ws://localhost:3000/cursors?nodeid=ssq
+          uri: lb:ws://ws-service
+          predicates:
+            - Path=/cursors/**
 # zuul路由转发，路由配置
 #zuul:
 #  routes:
