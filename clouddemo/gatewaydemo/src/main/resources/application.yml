@@ -15,34 +15,51 @@ spring:
   cloud:
     gateway:
       routes:
+        #sock js方式
         - id: bulletscreen
-          # 重点！/info必须使用http进行转发，lb代表从注册中心获取服务
+          # /info必须使用http进行转发，lb代表从注册中心获取服务
           uri: lb://bullet
           predicates:
-            # 重点！转发该路径！
+            # 转发该路径！
             - Path=/bullet/info/**
         - id: bulletscreen
-          # 重点！lb:ws://代表从注册中心获取服务，并且转发协议为websocket
+          # lb:ws://代表从注册中心获取服务，并且转发协议为websocket
           uri: lb:ws://bullet
           predicates:
             # 转发/bullet端点下的所有路径
             - Path=/bullet/**
 
+        #nomal websocket
         - id: bulletscreen2
           uri: lb:ws://bullet
           predicates:
             - Path=/bullet2/**
 
+        #-------------------------------nodejs服务---------------------------------------------------
+        #某一台ws服务主机,如果该主机下线也不影响，因为在CustomRouteToRequestUrlFilter会转发到可用的服务器
+        - id: test
+          uri: ws://127.0.0.1:3000
+          predicates:
+            - Path=/sharedb/**
+            #假定协作参数
+            - Query=nodeid
+        - id: test2
+          uri: ws://127.0.0.1:3000
+          predicates:
+            - Path=/cursors/**
+            #假定协作参数
+            - Query=nodeid
+
+        #负载均衡
         - id: wsservice
-          #ws://localhost:3000/sharedb?nodeid=ssq
           uri: lb:ws://ws-service
           predicates:
             - Path=/sharedb/**
         - id: wsservice2
-          #ws://localhost:3000/cursors?nodeid=ssq
           uri: lb:ws://ws-service
           predicates:
             - Path=/cursors/**
+        #-------------------------------nodejs服务---------------------------------------------------
 # zuul路由转发，路由配置
 #zuul:
 #  routes:
@@ -55,3 +72,7 @@ spring:
 #    api-c:
 #      path: /ribbon/**
 #      serviceId: ribboncall
+
+#logging:
+#  level:
+#    root: debug
