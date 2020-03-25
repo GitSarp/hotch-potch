@@ -1,5 +1,9 @@
 package com.example.websocket;
 
+import com.example.websocket.config.SampleConfigurator;
+import com.example.websocket.config.SampleDecoder;
+import com.example.websocket.config.SimpleEncoder;
+
 import javax.websocket.*;
 import java.io.IOException;
 import java.net.URI;
@@ -11,7 +15,11 @@ import java.util.concurrent.*;
  * @create 2019/10/23 11:17
  **/
 
-@ClientEndpoint
+@ClientEndpoint(
+        configurator= SampleConfigurator.class,
+        decoders={SampleDecoder.class},
+        encoders={SimpleEncoder.class},
+        subprotocols={})
 public class ClientEndpointTest {
     private final static ExecutorService pool = new ThreadPoolExecutor(600, 700,
                                       0L, TimeUnit.MILLISECONDS,
