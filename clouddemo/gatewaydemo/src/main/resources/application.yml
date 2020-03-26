@@ -13,6 +13,10 @@ spring:
   application:
     name: service-zuul
   cloud:
+#使用官方推荐的ReactiveLoadBalancerClientFilter，禁用默认的LoadBalancerClientFilter
+#    loadbalancer:
+#      ribbon:
+#        enabled: false
     gateway:
       routes:
         #sock js方式
@@ -60,6 +64,7 @@ spring:
           predicates:
             - Path=/cursors/**
         #-------------------------------nodejs服务---------------------------------------------------
+
 # zuul路由转发，路由配置
 #zuul:
 #  routes:
