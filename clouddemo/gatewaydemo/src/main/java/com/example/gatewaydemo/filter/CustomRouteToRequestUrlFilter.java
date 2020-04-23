@@ -20,7 +20,8 @@ import java.util.List;
  * @description
  * @create 2020/3/23 16:16
  **/
-@Component
+//@Component
+@Deprecated
 public class CustomRouteToRequestUrlFilter extends RouteToRequestUrlFilter {
 
     //ws服务主机

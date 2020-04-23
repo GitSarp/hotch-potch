@@ -9,7 +9,8 @@ import java.net.URI;
  **/
 public class WsTest {
     //final static String url = "ws://127.0.0.1:6001/bullet2";
-    final static String url = "ws://127.0.0.1:6001/sharedb?nodeid=test";
+    //final static String url = "ws://testWS.com/sharedb?nodeid=test";
+    final static String url = "ws://127.0.0.1:8081/sharedb?nodeid=test";
 
     //线程数
     static int threadNum = 1;
@@ -49,7 +50,8 @@ public class WsTest {
                     }
                 }
 
-                test.sendTextMessage("hello!");
+                //test.sendTextMessage("hello!");
+                Thread.sleep(10*60*1000);
             }catch (Exception e){
                 e.printStackTrace();
             }

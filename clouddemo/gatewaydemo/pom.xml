@@ -11,10 +11,12 @@
     <name>gatewaydemo</name>
     <description>Demo project for Spring Boot</description>
 
+    <!--不继承cloud demo了，因为spring boot版本需要和cloud版本匹配
+    spring cloud版本低的话，缺少网关的hash负载均衡的某些类-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.5.RELEASE</version>
+        <version>2.2.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -22,7 +24,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Finchley.SR1</spring-cloud.version>
+        <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
     </properties>
 
     <dependencies>
@@ -37,38 +39,21 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
-        <!--覆盖版本-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-gateway-core</artifactId>
-            <version>2.2.0.RELEASE</version>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!--覆盖版本-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-netflix-ribbon</artifactId>
-            <version>2.2.0.RELEASE</version>
-        </dependency>
 
-        <!--负载均衡，使用ReactiveLoadBalancerClientFilter-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-loadbalancer</artifactId>
-            <version>2.2.2.RELEASE</version>
-        </dependency>
-
-
-        <!--gateway网关加这个不报错
-        java.lang.ClassNotFoundException: com.netflix.hystrix.contrib.javanica.aop.aspectj.HystrixCommandAspect-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-hystrix</artifactId>
             <version>1.4.7.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
         <!--健康检查-->
@@ -98,6 +83,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.68</version>
         </dependency>
     </dependencies>
 

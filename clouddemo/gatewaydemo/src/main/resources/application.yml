@@ -41,18 +41,18 @@ spring:
 
         #-------------------------------nodejs服务---------------------------------------------------
         #某一台ws服务主机,如果该主机下线也不影响，因为在CustomRouteToRequestUrlFilter会转发到可用的服务器
-        - id: test
-          uri: ws://127.0.0.1:3000
-          predicates:
-            - Path=/sharedb/**
-            #假定协作参数
-            - Query=nodeid
-        - id: test2
-          uri: ws://127.0.0.1:3000
-          predicates:
-            - Path=/cursors/**
-            #假定协作参数
-            - Query=nodeid
+#        - id: test
+#          uri: ws://127.0.0.1:3000
+#          predicates:
+#            - Path=/sharedb/**
+#            #假定协作参数
+#            - Query=nodeid
+#        - id: test2
+#          uri: ws://127.0.0.1:3000
+#          predicates:
+#            - Path=/cursors/**
+#            #假定协作参数
+#            - Query=nodeid
 
         #负载均衡
         - id: wsservice
@@ -63,6 +63,11 @@ spring:
           uri: lb:ws://ws-service
           predicates:
             - Path=/cursors/**
+
+#转发请求到ws-service服务使用自定义负载均衡策略
+ws-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.example.gatewaydemo.filter.rule.CustomBalanceRule
         #-------------------------------nodejs服务---------------------------------------------------
 
 # zuul路由转发，路由配置

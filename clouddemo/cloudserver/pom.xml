@@ -12,10 +12,10 @@
     <description>Demo project for Spring Boot</description>
 
     <parent>
-    <groupId>com.example</groupId>
-    <artifactId>clouddemo</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-</parent>
+        <groupId>com.example</groupId>
+        <artifactId>clouddemo</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

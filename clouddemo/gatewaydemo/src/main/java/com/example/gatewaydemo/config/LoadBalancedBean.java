@@ -38,10 +38,11 @@ public class LoadBalancedBean {
 
     /**
      * 注册自定义负载均衡策略
+     * 注意，这将是全局的
      * @return
      */
-    @Bean
+/*    @Bean
     IRule rule(){
         return new CustomBalanceRule();
-    }
+    }*/
 }
