@@ -50,12 +50,12 @@ public class CustomRouteToRequestUrlFilter extends RouteToRequestUrlFilter {
         }
 
         //request.getURI();是原始请求
-        //ws://127.0.0.1:3000/sharedb?nodeid=xxx   是转发请求
+        //ws://127.0.0.1:3000/sharedb?groupId=xxx   是转发请求
         URI uri = (URI)(exchange.getAttributes().get(ServerWebExchangeUtils.GATEWAY_REQUEST_URL_ATTR));
         String scheme = uri.getScheme();
         MultiValueMap queryMap = request.getQueryParams();
-        //根据请求参数nodeid判断是否需要hash
-        if(("ws".equals(scheme) || "wss".equals(scheme)) && queryMap != null && queryMap.containsKey("nodeid")){
+        //根据请求参数groupId判断是否需要hash
+        if(("ws".equals(scheme) || "wss".equals(scheme)) && queryMap != null && queryMap.containsKey("groupId")){
             exchange.getAttributes().put(ServerWebExchangeUtils.GATEWAY_REQUEST_URL_ATTR, redirectURI(uri, scheme));
         }
         return chain.filter(exchange);

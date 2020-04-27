@@ -33,7 +33,7 @@ public class WsUriHashFilter extends LoadBalancerClientFilter {
         String scheme = uri.getScheme();
         MultiValueMap queryParams = request.getQueryParams();
         //根据请求参数判断是否需要hash
-        boolean baseLoadBalance = !("ws".equals(scheme) || "wss".equals(scheme)) || queryParams == null || !queryParams.containsKey("nodeid");
+        boolean baseLoadBalance = !("ws".equals(scheme) || "wss".equals(scheme)) || queryParams == null || !queryParams.containsKey("groupId");
         if(baseLoadBalance){
             return super.choose(exchange);
         }

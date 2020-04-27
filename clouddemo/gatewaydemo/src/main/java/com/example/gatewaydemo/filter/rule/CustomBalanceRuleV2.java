@@ -82,7 +82,7 @@ public class CustomBalanceRuleV2 extends AbstractLoadBalancerRule {
                                         //groupId=xxx
                                         String query = ((URI)key).getQuery();
                                         Map<String, String> split = Splitter.on("&").withKeyValueSeparator("=").split(query);
-                                        String groupId = split.get("groupid");
+                                        String groupId = split.get("groupId");
                                         if(groupId != null){
                                             //之前连接的服务器
                                             String oldServer = prevServer.get(groupId);

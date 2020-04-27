@@ -9,8 +9,8 @@ import java.net.URI;
  **/
 public class WsTest {
     //final static String url = "ws://127.0.0.1:6001/bullet2";
-    //final static String url = "ws://testWS.com/sharedb?nodeid=test";
-    final static String url = "ws://127.0.0.1:8081/sharedb?nodeid=test";
+    //final static String url = "ws://testWS.com/sharedb?groupId=test";
+    final static String url = "ws://127.0.0.1:8081/sharedb?groupId=test";
 
     //线程数
     static int threadNum = 1;

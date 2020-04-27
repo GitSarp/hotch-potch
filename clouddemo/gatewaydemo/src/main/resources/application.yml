@@ -46,13 +46,13 @@ spring:
 #          predicates:
 #            - Path=/sharedb/**
 #            #假定协作参数
-#            - Query=nodeid
+#            - Query=groupId
 #        - id: test2
 #          uri: ws://127.0.0.1:3000
 #          predicates:
 #            - Path=/cursors/**
 #            #假定协作参数
-#            - Query=nodeid
+#            - Query=groupId
 
         #负载均衡
         - id: wsservice

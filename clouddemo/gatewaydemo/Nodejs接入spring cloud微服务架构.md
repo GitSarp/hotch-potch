@@ -92,12 +92,12 @@ spring:
     gateway:
       routes:
         - id: wsservice
-          #ws://localhost:3000/sharedb?nodeid=ssq
+          #ws://localhost:3000/sharedb?groupId=ssq
           uri: lb:ws://ws-service
           predicates:
             - Path=/sharedb/**
         - id: wsservice2
-          #ws://localhost:3000/cursors?nodeid=ssq
+          #ws://localhost:3000/cursors?groupId=ssq
           uri: lb:ws://ws-service
           predicates:
             - Path=/cursors/**
