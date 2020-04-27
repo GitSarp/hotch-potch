@@ -67,7 +67,7 @@ spring:
 #转发请求到ws-service服务使用自定义负载均衡策略
 ws-service:
   ribbon:
-    NFLoadBalancerRuleClassName: com.example.gatewaydemo.filter.rule.CustomBalanceRule
+    NFLoadBalancerRuleClassName: com.example.gatewaydemo.filter.rule.CustomBalanceRuleV2
         #-------------------------------nodejs服务---------------------------------------------------
 
 # zuul路由转发，路由配置

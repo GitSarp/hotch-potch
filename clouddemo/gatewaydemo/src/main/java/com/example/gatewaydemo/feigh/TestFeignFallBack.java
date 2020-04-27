@@ -15,7 +15,13 @@ public class TestFeignFallBack implements TestlFeignClient{
 
     @Override
     public String getHealthInfo() {
-        logger.info("quill服务熔断异常");
-        return "quill服务熔断异常";
+        logger.info("健康检查服务熔断异常");
+        return "健康检查服务熔断异常";
+    }
+
+    @Override
+    public String closeWebsocket(String groupId) {
+        logger.info("关闭连接熔断异常");
+        return "关闭连接熔断异常";
     }
 }

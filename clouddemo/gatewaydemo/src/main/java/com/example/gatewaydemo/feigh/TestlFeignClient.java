@@ -1,5 +1,6 @@
 package com.example.gatewaydemo.feigh;
 
+import feign.Param;
 import feign.RequestLine;
 import org.springframework.cloud.openfeign.FeignClient;
 
@@ -19,4 +20,10 @@ public interface TestlFeignClient {
     //@GetMapping(value = "/actuator/info")
     String getHealthInfo();
 
+    /**
+     * 断开指定组的websocket连接
+     * @return
+     */
+    @RequestLine("GET /close/{groupId}")
+    String closeWebsocket(@Param("groupId") String groupId);
 }

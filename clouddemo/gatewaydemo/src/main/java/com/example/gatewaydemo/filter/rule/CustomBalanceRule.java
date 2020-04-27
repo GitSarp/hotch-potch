@@ -26,7 +26,7 @@ public class CustomBalanceRule extends AbstractLoadBalancerRule {
     private Logger logger = LoggerFactory.getLogger(this.getClass().getName());
 
     @Override
-    public Server choose(Object key) {//这里的key就是过滤器中传过来的noteid
+    public Server choose(Object key) {//这里的key就是过滤器中传过来的uri
         //所有可用服务器（不可变list）
         List<Server> unmodifiedServers = this.getLoadBalancer().getReachableServers();
         List<Server> servers = Collections.synchronizedList(new ArrayList<>(unmodifiedServers));
