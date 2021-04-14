@@ -11,7 +11,21 @@ import java.util.Map;
  * @create 2020/4/2 15:10
  **/
 public class Array {
+
+
     /**
+     * 找寻元素右侧比本元素小的元素个数
+     * @param nums: a list of integers
+     * @return: return a list of integers
+     */
+    public List<Integer> countSmaller(int[] nums) {
+        return null;
+    }
+
+
+
+    /**
+     * 找寻出现次数最多的树
      * @param nums: A list of integers
      * @param k: An integer
      * @return: The majority number
