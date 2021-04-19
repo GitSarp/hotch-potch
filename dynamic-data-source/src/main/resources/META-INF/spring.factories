@@ -1,0 +1,4 @@
+#starter指定自动装配类,其他项目引入才能获取到自动装配好的bean
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.example.dynamicdatasource.config.DataSourceConfig,\
+com.example.dynamicdatasource.aop.DynamicDataSourceAspect
