@@ -1,0 +1,20 @@
+server:
+  port: 8080
+#security:
+#  basic:
+#    enabled: false
+
+spring:
+  datasource:
+    #不加nullCatalogMeansCurrent无法自动建表
+    url: jdbc:mysql://127.0.0.1:3306/dynamic4?useUnicode=true&characterEncoding=UTF-8&nullCatalogMeansCurrent=true
+    username: root
+    password: mysql8578
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+
+  activiti:
+    #不扫描检查processes目录下是否有流程的xml文件
+    check-process-definitions: false
